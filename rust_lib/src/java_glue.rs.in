@@ -1,0 +1,12 @@
+use crate::Session;
+use jni_sys::*;
+
+// ANCHOR: api
+foreign_class!(class Session {
+    self_type Session;
+    constructor Session::new(a_num: i32) -> Session;
+    fn Session::add_and1(&self, val: i32) -> i32;
+    fn Session::greet(to: &str) -> String;
+    fn Session::lspath(dir: &str) -> String;
+});
+// ANCHOR_END: api
